@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  casepro:
+    build:  
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    ports: 
+      - 8000:8000
+    links: 
+      - redis
+      - database
+    depends_on: 
+      - redis
+      - database
+
+  redis:
+    image: redis
+    ports: 
+      - 6379:6379
+    restart: always
+
+  database:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment: 
+      - POSTGRES_USER=casepro
+      - POSTGRES_PASSWORD=nyaruka
+      - POSTGRES_DB=casepro
