@@ -23,6 +23,7 @@ services:
     depends_on: 
       - redis
       - database
+      - casepro
 
   casepro_celery_sync:
     image: casepro_casepro
@@ -30,6 +31,7 @@ services:
     depends_on: 
       - redis
       - database
+      - casepro
 
   redis:
     image: redis
