@@ -7,3 +7,14 @@ Case management dashboard for UNICEF and partner organizations. Supports use of 
 
 For documentation see the [project wiki](https://github.com/rapidpro/casepro/wiki) which includes essential 
 information for both developers and administrators.
+
+Pt-br
+
+Para buildar a image é necessário ter o Docker e docker-compose. Após baixar o projeto acesse a pasta e execute: 
+```
+$ docker-compose up
+```
+
+Antes de terminar as imagens foi preciso instalar duas bibliotecas do NodeJs.
+
+Precisei alterar o hostname do banco de dados no settings.py
